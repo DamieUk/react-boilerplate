@@ -1,0 +1,53 @@
+.page-content {
+  padding-top: rem-calc(65);
+  min-height: 100vh;
+  margin-bottom: rem-calc(-70);
+}
+
+.page-content:after {
+  content: "";
+  display: block;
+}
+
+.page-footer, .page-content:after {
+  height: rem-calc(70);
+}
+
+.page-footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: rem-calc(15);
+  background-color: $light-gray;
+}
+
+.page-header {
+  display: block;
+  background-color: $light-gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem-calc(65);
+  padding: rem-calc(15);
+}
+
+// ==============>>>>> additional classes
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+
+  &.small {
+    max-width: rem-calc(400);
+  }
+
+  &.medium {
+    max-width: rem-calc(550);
+  }
+
+  &.large {
+    max-width: rem-calc(800);
+  }
+}

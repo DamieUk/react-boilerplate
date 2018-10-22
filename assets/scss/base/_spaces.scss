@@ -1,0 +1,109 @@
+//margin && padding custom classes ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+$spaceamountsMP: (0, 2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 100);
+
+@mixin generate-margin-base() {
+  @each $space in $spaceamountsMP {
+    .m-#{$space} {
+      margin: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-margin-bottom() {
+  @each $space in $spaceamountsMP {
+    .mb-#{$space} {
+      margin-bottom: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-margin-right() {
+  @each $space in $spaceamountsMP {
+    .mr-#{$space} {
+      margin-right: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-margin-left() {
+  @each $space in $spaceamountsMP {
+    .ml-#{$space} {
+      margin-left: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-margin-top() {
+  @each $space in $spaceamountsMP {
+    .mt-#{$space} {
+      margin-top: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-padding-base() {
+  @each $space in $spaceamountsMP {
+    .p-#{$space} {
+      padding: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-padding-left() {
+  @each $space in $spaceamountsMP {
+    .pl-#{$space} {
+      padding-left: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-padding-top() {
+  @each $space in $spaceamountsMP {
+    .pt-#{$space} {
+      padding-top: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-padding-bottom() {
+  @each $space in $spaceamountsMP {
+    .pb-#{$space} {
+      padding-bottom: rem-calc($space);
+    }
+  }
+}
+
+@mixin generate-padding-right() {
+  @each $space in $spaceamountsMP {
+    .pr-#{$space} {
+      padding-right: rem-calc($space);
+    }
+  }
+}
+
+@include generate-margin-base();
+@include generate-margin-left();
+@include generate-margin-bottom();
+@include generate-margin-right();
+@include generate-margin-top();
+
+@include generate-padding-base();
+@include generate-padding-left();
+@include generate-padding-right();
+@include generate-padding-bottom();
+@include generate-padding-top();
+
+// generate font-sizes ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+$fontsizes: (10, 11, 12, 13, 14, 16, 18, 20, 22);
+
+@mixin generate-font-sizes() {
+  @each $size in $fontsizes {
+    .size-#{$size} {
+      font-size: rem-calc($size);
+    }
+  }
+}
+
+@include generate-font-sizes();
