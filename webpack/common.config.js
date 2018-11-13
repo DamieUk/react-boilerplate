@@ -13,7 +13,7 @@ require('dotenv').config();
 
 // ENTRIES
 const entries = [
-	'./src/app.jsx',
+	'./src/app.tsx',
 	'./assets/scss/global.scss',
 ];
 
@@ -80,6 +80,7 @@ const rules = prod => [{
 	include: [path.join(__dirname, '..', 'src')],
 }, {
 	test: /\.(ts|tsx)?$/,
+  exclude: /node_modules/,
 	include: path.resolve(__dirname, '..', 'src'),
 	use: [{ loader: 'ts-loader' }],
 }, {
@@ -103,9 +104,7 @@ const rules = prod => [{
 }];
 
 module.exports = (env) => {
-	const PROD = env.NODE_ENV !== 'development';
-	
-	const minimizer = PROD ? [
+	const minimizer = env.IS_PROD ? [
 		new UglifyJsPlugin({
 			extractComments: true,
 			minify(file) {
@@ -117,7 +116,7 @@ module.exports = (env) => {
 	
 	const plugins = [
 		...commonPlugins(env),
-		...(PROD ? [
+		...(env.IS_PROD ? [
 			new webpack.LoaderOptionsPlugin({
 				minimize: true,
 				debug: false
@@ -135,11 +134,11 @@ module.exports = (env) => {
 	
 	return {
 		mode: env.NODE_ENV,
-		devtool: !PROD ? 'inline-source-map' : false,
+		devtool: !env.IS_PROD ? 'inline-source-map' : false,
 		entry: entries,
 		plugins,
 		resolve: {
-			extensions: ['.js', '.jsx', '.scss'],
+			extensions: ['.tsx', '.ts', '.js', '.jsx', '.scss'],
 			modules: [
 				'node_modules',
 				path.join(__dirname, '..', 'src'),
@@ -149,7 +148,7 @@ module.exports = (env) => {
 			minimizer,
 		},
 		module: {
-			rules: rules(PROD),
+			rules: rules(env.IS_PROD),
 		},
 		output: {
 			path: path.join(__dirname, '..', 'dist'),

@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import proxy from 'http-proxy-middleware';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import commonConfig from './common.webpack.config';
+import commonConfig from './common.config';
 import ENV_VARS from './env';
 
 const app = express();

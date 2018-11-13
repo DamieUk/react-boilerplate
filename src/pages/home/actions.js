@@ -1,4 +1,4 @@
-import { GET, createAction } from 'utils';
+import { GET, createAction } from 'src/utilities';
 import types from './actionTypes';
 
 export const fetchDataAction = (dispatch, payload) => dispatch(

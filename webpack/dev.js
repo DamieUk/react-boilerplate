@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import path from 'path';
-import commonConfig from './common.webpack.config';
+import commonConfig from './common.config';
 import ENV_VARS from './env';
 
 const config = commonConfig(ENV_VARS);

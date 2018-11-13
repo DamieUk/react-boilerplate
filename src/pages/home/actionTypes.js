@@ -1,4 +1,4 @@
-import { actionTypesCreator } from 'utils';
+import { actionTypesCreator } from 'src/utilities';
 
 export default actionTypesCreator('home', {
 	fetchData: 'get'
