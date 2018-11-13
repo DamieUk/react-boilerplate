@@ -56,11 +56,11 @@ $modal-overlay-index: 5000;
 $modal-box-index: $index-top;
 
 $foundation-palette: (
-        primary: #3893bb,
-        secondary: #c9cfd6,
-        success: #3ac15f,
-        warning: #ffc168,
-        alert: #e3544e,
+        primary: $primary-color,
+        secondary: $secondary-color,
+        success: $success-color,
+        warning: $warning-color,
+        alert: $alert-color,
 );
 
 // 2. Breakpoints
@@ -82,8 +82,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-        small: 20px,
-        medium: 30px,
+        small: 10px,
+        medium: 20px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
