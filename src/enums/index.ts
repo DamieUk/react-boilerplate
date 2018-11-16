@@ -1,1 +1,1 @@
-export * from './onborading';
+export * from './theme';

@@ -5,6 +5,7 @@ import {
 import { routerMiddleware } from 'react-router-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createBrowserHistory } from 'history';
+import { logger } from '../middleware/logger';
 import { Store as StoreInterface } from '../interfaces/redux';
 import reducers from '../reducers';
 
@@ -16,5 +17,6 @@ export default createStore<StoreInterface, any, any, any>(
   {},
   composeEnhancers(applyMiddleware(
     routerMiddleware(history),
+    logger,
   ))
 );

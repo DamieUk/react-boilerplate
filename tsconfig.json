@@ -11,8 +11,9 @@
     "paths": {
       "pages": ["./pages"],
       "pages/*": ["./pages/*"],
+      "actions/*": ["./actions/*"],
       "utilities": ["./utilities"],
-      "utilities/*": ["./utilities/*"],
+      "models/*": ["./models/*"],
       "enums": ["./enums"],
       "elements": ["./elements"],
       "elements/*": ["./elements/*"]

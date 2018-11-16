@@ -1,15 +1,13 @@
 import { combineReducers, Reducer } from 'redux';
 import { reducer as form } from 'redux-form';
 import { routerReducer } from 'react-router-redux';
-import onboarding from '../reducers/on-boarding';
-import currentUser from '../reducers/auth';
-import { Store } from '../interfaces/redux';
+import { RootState } from './state';
+import dashboard from './dashboard';
 
-const reducers: Reducer<Store> = combineReducers<any>({
+const reducers: Reducer<RootState> = combineReducers<any>({
   router: routerReducer,
   form,
-  onboarding,
-  currentUser,
+  dashboard,
 });
 
 export default reducers;

@@ -13,7 +13,7 @@ class HomePage extends React.PureComponent {
 	render() {
 		return (
 			<div className="p-15">
-				<h1>Home Page</h1>
+				<h1>Dashboard Page</h1>
 			</div>
 		);
 	}

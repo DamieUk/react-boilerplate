@@ -14,7 +14,7 @@ class Button extends React.PureComponent<ButtonProps, {}> {
   static defaultProps = {
     status: 'primary',
     type: 'button',
-    label: null,
+    label: '',
     className: '',
   };
 
