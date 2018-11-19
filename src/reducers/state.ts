@@ -1,10 +1,10 @@
 import { MDashboard } from 'models';
-import { FormReducerMapObject } from 'redux-form';
+import { FormStateMap } from 'redux-form';
 
 export interface RootState {
   dashboard: MDashboard;
   router?: any;
-  form: FormReducerMapObject;
+  form: FormStateMap;
 }
 
 export namespace RootState {

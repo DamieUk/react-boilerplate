@@ -10,6 +10,10 @@ body {
   outline: none !important;
 }
 
+img {
+  max-width: 100%;
+}
+
 .clearfix {
   &:after {
     content: '';

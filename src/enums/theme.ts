@@ -42,6 +42,7 @@ export const theme: Theme = {
 		tonalOffset: 0.08,
 	},
 	typography: {
+        useNextVariants: true,
 		fontFamily: "'PT Sans', sans-serif"
 	},
 	shape: {

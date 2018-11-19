@@ -13,7 +13,7 @@ require('dotenv').config();
 
 // ENTRIES
 const entries = [
-	'./src/app.tsx',
+	'./src/index.tsx',
 	'./assets/scss/global.scss',
 ];
 
@@ -44,6 +44,7 @@ const commonPlugins = env => [
 	new webpack.DefinePlugin({
 		NODE_ENV: JSON.stringify(env.NODE_ENV),
 		APP_NAME: JSON.stringify(env.APP_NAME),
+		API_KEY: JSON.stringify(env.API_KEY),
 		API_URL: JSON.stringify(env.API_URL),
 		PORT: JSON.stringify(env.PORT),
 	}),

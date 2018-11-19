@@ -18,5 +18,8 @@
       "elements": ["./elements"],
       "elements/*": ["./elements/*"]
     }
+  },
+  "globals": {
+    "NODE_ENV": true
   }
 }

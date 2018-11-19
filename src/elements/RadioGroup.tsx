@@ -2,7 +2,7 @@ import * as React from 'react';
 import { noop } from 'lodash';
 import cn from 'classnames';
 import { WrappedFieldProps } from 'redux-form';
-import { generateId } from '../utils';
+import { generateId } from 'utilities';
 
 interface Option {
   label: string;
@@ -21,8 +21,8 @@ interface RadioButtonProps {
 interface RadioButtonGroupProps {
   name: string;
   onChange: Function;
-  value: any;
-  options: Array<Option>;
+  value: string | null;
+  options: Option[];
   className: string;
   disabled: boolean;
 }
@@ -47,10 +47,11 @@ const RadioButton = (props: RadioButtonProps) => (
 );
 
 class RadioGroupComponent extends React.PureComponent<RadioButtonGroupProps> {
-  static defaultProps = {
+    static defaultProps = {
     name: generateId(),
     onChange: noop,
-    value: null,
+    value: '',
+  // @ts-ignore
     options: [],
     className: '',
     disabled: false,

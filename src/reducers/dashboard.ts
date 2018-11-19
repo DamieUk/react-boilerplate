@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { DashboardActions } from 'actions/dashboard';
+import { DashboardActions } from 'pages/dashboard/actions';
 import { MDashboard } from 'models';
 import { RootState } from './state';
 

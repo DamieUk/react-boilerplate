@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { generateId } from 'utils';
+import { generateId } from 'utilities';
 import {noop, bindAll} from 'lodash';
 import { WrappedFieldProps } from 'redux-form';
 

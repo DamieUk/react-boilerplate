@@ -1,5 +1,5 @@
 .page-content {
-  padding-top: rem-calc(65);
+  padding-top: rem-calc(60);
   min-height: 100vh;
   margin-bottom: rem-calc(-70);
 }
@@ -29,8 +29,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: rem-calc(65);
-  padding: rem-calc(15);
+  height: rem-calc(60);
+  padding: rem-calc(0 15);
+
+  .logo-holder {
+    max-width: rem-calc(60);
+  }
 }
 
 // ==============>>>>> additional classes

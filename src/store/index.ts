@@ -1,22 +1,36 @@
-import {
-  createStore,
-  applyMiddleware,
-} from 'redux';
-import { routerMiddleware } from 'react-router-redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
+import { routerMiddleware as createRouterMiddleware } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
-import { logger } from '../middleware/logger';
-import { Store as StoreInterface } from '../interfaces/redux';
-import reducers from '../reducers';
+import rootReducer from '../reducers';
+import { rootEpic } from '../epics';
 
-export const history = createBrowserHistory();
-const composeEnhancers = composeWithDevTools({});
+const composeEnhancers = (
+    process.env.NODE_ENV === 'development' &&
+    window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+) || compose;
 
-export default createStore<StoreInterface, any, any, any>(
-  reducers,
-  {},
-  composeEnhancers(applyMiddleware(
-    routerMiddleware(history),
-    logger,
-  ))
-);
+export const epicMiddleware = createEpicMiddleware();
+export const browserHistory = createBrowserHistory();
+export const routerMiddleware = createRouterMiddleware(browserHistory);
+
+function configureStore() {
+    const middlewares = [
+        epicMiddleware,
+        routerMiddleware,
+    ];
+
+    const enhancer = composeEnhancers(applyMiddleware(...middlewares));
+
+    return createStore(
+        rootReducer,
+        {},
+        enhancer
+    );
+}
+
+export const store = configureStore();
+
+epicMiddleware.run(rootEpic);
+
+export default store;
